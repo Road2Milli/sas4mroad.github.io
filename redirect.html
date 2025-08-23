@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Redirecting...</title>
+  <link rel="stylesheet" href="style.css">
+  <script>
+    let seconds = 5;
+    function countdown() {
+      let timer = setInterval(() => {
+        document.getElementById("message").innerText = "Redirecting in " + seconds + "s...";
+        seconds--;
+        if (seconds < 0) {
+          clearInterval(timer);
+          window.location.href = "mod1.html"; // change to target page
+        }
+      }, 1000);
+    }
+    window.onload = countdown;
+  </script>
+</head>
+<body>
+  <main class="redirect">
+    <p id="message">Redirecting in 5s...</p>
+  </main>
+</body>
+</html>
