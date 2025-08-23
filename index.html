@@ -1,20 +1,95 @@
-<!DOCTYPE html>
-<html>
+<!-- =============================== --><!-- index.html (Homepage)          --><!-- =============================== --><!DOCTYPE html><html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <title>SAS 4 MODS HQ</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" type="image/jpg" href="download.jpg">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Mods Site</title>
+  <link rel="stylesheet" href="style.css">  <!-- 🔹 PopAds Script Slot (paste your code below) -->  <!-- <script type="text/javascript" src="YOUR_POPADS_CODE.js"></script> --></head>
+<body>
+  <header>
+    <h1>My MODs Collection</h1>
+  </header>  <main class="mods-grid">
+    <!-- Example Mod Card -->
+    <div class="mod-card">
+      <img src="https://via.placeholder.com/300x150" alt="Mod 1">
+      <h2>Mod 1</h2>
+      <p>Short description of Mod 1.</p>
+      <a class="btn" href="mod1.html">View Mod</a>
+    </div><div class="mod-card">
+  <img src="https://via.placeholder.com/300x150" alt="Mod 2">
+  <h2>Mod 2</h2>
+  <p>Short description of Mod 2.</p>
+  <a class="btn" href="mod2.html">View Mod</a>
+</div>
+<!-- Copy the block above for more mods -->
 
+  </main>
+</body>
+</html><!-- =============================== --><!-- mod1.html (Example Mod Page)    --><!-- =============================== --><!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mod 1 - Download</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
 </head>
 <body>
-    <h1>Welcome To SAS 4 MODS HQ Official Website</h1>
-    <h2>Latest Mod Released:</h2>
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/jzZMM9xFJi8?si=zoCh7bNkK0mEjEjN" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-    <h2>This Mod Has:</h2>
-    <p> God Mode & Modded Skill points & Unlimited money and boxes - keys - cores & All weapons and armors unlocked bypassed the limit & maxed out accounts</p>
-    <a href="https://loot-link.com/s?hmB15qCX">
-    <button>Download Here</button>
-    </a>
+  <header>
+    <h1>Mod 1</h1>
+  </header>  <main class="mod-page">
+    <img src="https://via.placeholder.com/500x250" alt="Mod 1 Screenshot">
+    <p>This is Mod 1. Short description goes here.</p><button id="downloadBtn" class="btn" disabled>Wait 15s...</button>
+
+  </main>
 </body>
-</html>
+</html><!-- =============================== --><!-- redirect.html (5s Wait Page)   --><!-- =============================== --><!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Redirecting...</title>
+  <link rel="stylesheet" href="style.css">
+  <script>
+    let seconds = 5;
+    function countdown() {
+      let timer = setInterval(() => {
+        document.getElementById("message").innerText = "Redirecting in " + seconds + "s...";
+        seconds--;
+        if (seconds < 0) {
+          clearInterval(timer);
+          window.location.href = "mod1.html"; // change target page
+        }
+      }, 1000);
+    }
+    window.onload = countdown;
+  </script>
+</head>
+<body>
+  <main class="redirect">
+    <p id="message">Redirecting in 5s...</p>
+  </main>
+</body>
+</html><!-- =============================== --><!-- style.css (Dark + Blue Theme)  --><!-- =============================== -->body { margin: 0; font-family: Arial, sans-serif; background: #121212; color: #ffffff; }
+
+header { text-align: center; padding: 20px; background: #1e1e1e; }
+
+h1, h2, p { margin: 10px; }
+
+.mods-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; padding: 20px; }
+
+.mod-card { background: #1e1e1e; padding: 15px; border-radius: 12px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); text-align: center; }
+
+.mod-card img { max-width: 100%; border-radius: 8px; }
+
+.btn { display: inline-block; padding: 10px 20px; margin-top: 10px; border: none; border-radius: 8px; background: linear-gradient(45deg, #007bff, #00d4ff); color: #fff; font-size: 16px; cursor: pointer; text-decoration: none; transition: 0.3s; }
+
+.btn:hover { box-shadow: 0 0 15px #00d4ff; }
+
+.mod-page { max-width: 600px; margin: auto; padding: 20px; text-align: center; }
+
+.mod-page img { max-width: 100%; border-radius: 12px; }
+
+.redirect { text-align: center; margin-top: 100px; font-size: 20px; }
+
+/* Mobile Friendly */ @media (max-width: 600px) { h1 { font-size: 24px; } .btn { width: 100%; font-size: 18px; } }
+
+<!-- =============================== --><!-- script.js (Countdown Timer)    --><!-- =============================== -->let seconds = 15; const btn = document.getElementById("downloadBtn"); if (btn) { let timer = setInterval(() => { seconds--; btn.innerText = "Wait " + seconds + "s..."; if (seconds <= 0) { clearInterval(timer); btn.disabled = false; btn.innerText = "Download Now"; btn.onclick = () => { window.location.href = "YOUR_MOD_DOWNLOAD_LINK_HERE"; // replace with your link }; } }, 1000); }
+
